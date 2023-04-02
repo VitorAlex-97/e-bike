@@ -10,7 +10,7 @@ export function MainBanner() {
     <Box
       w='100%'
       h='300'
-      mt='60'
+      mt='-6'
     >
       <ImageBackground
         source={slider}

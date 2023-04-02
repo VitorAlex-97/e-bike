@@ -5,6 +5,7 @@ import { Card } from "../../atomic/molecules/Card";
 import { useEffect, useState } from "react";
 import api from "../../services/api";
 import { FlatList } from "react-native";
+import { Header } from "../../atomic/molecules/Header";
 
 export type CardProps = {
   id: string;
@@ -37,7 +38,14 @@ export function Home() {
     <Box flex='1' padding='20px' pt='-10px' position='relative'>
       <DetailBackground />
       <FlatList
-        ListHeaderComponent={() => <MainBanner />}
+        ListHeaderComponent={() => 
+          (
+            <>
+              <Header text="Choose your bike"/>
+              <MainBanner />
+            </>
+          )
+        }
         keyExtractor={item => item.id}
         data={equipments}
         showsVerticalScrollIndicator={false}
